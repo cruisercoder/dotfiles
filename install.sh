@@ -8,6 +8,8 @@ DIR=$PWD
 DOTFILES=(
   "vimrc"
   "vim/ftplugin/cpp.vim"
+  "vim/ftplugin/python.vim"
+  "vim/ftplugin/java.vim"
 )
 
 for dotfile in "${DOTFILES[@]}";do
