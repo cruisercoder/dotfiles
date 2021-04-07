@@ -12,6 +12,8 @@ DOTFILES=(
   "vim/ftplugin/java.vim"
 )
 
+mkdir -p $HOME/.vim/ftplugin
+
 for dotfile in "${DOTFILES[@]}";do
 	rm -rf "${HOME}/.${dotfile}"
 	ln -sf "${DIR}/${dotfile}" "${HOME}/.${dotfile}"
