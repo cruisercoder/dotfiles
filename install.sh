@@ -7,6 +7,8 @@ DIR=$PWD
 
 DOTFILES=(
   "vimrc"
+  "clang-format"
+  "inputrc-format"
   "vim/ftplugin/cpp.vim"
   "vim/ftplugin/python.vim"
   "vim/ftplugin/java.vim"
