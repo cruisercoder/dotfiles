@@ -3,6 +3,16 @@ syntax on
 set expandtab
 set tabstop=2
 
+map <C-P> :bp<cr>
+map <C-N> :bn<cr>
+
+map <C-J> <C-W>j
+map <C-K> <C-W>k
+
+set path=.,**
+
+"set tags=./ tags
+
 call plug#begin()
 Plug 'https://github.com/rhysd/vim-clang-format'
 Plug 'https://github.com/yegappan/mru'
