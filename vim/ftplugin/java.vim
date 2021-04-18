@@ -1,5 +1,5 @@
 " java
-nnoremap ,f :ClangFormat<cr>
+"nnoremap ,f :ClangFormat<cr>
 
 nnoremap ,b :set makeprg=javac\ -cp\ *.jar:.\ *.java\ %<cr>:make<cr>:cwindow<cr>
 
