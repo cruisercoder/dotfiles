@@ -1,7 +1,8 @@
 #!/bin/bash -ex
 
-VERSION=3.8.7
+VERSION=3.8.10
 
+mkdir -p out && cd out
 curl -OL https://www.python.org/ftp/python/$VERSION/Python-$VERSION.tgz
 tar -zxvf Python-$VERSION.tgz
 cd Python-$VERSION
