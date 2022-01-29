@@ -1,0 +1,30 @@
+#!/bin/bash -ex
+
+# Reference: https://chromium.googlesource.com/chromium/src/+/HEAD/docs/updating_clang_format_binaries.md
+
+unamestr=`uname`
+
+NAME=clang
+VERSION=13.0.0
+
+rm -rf out
+mkdir -p out && cd out
+
+curl -OL https://github.com/llvm/llvm-project/releases/download/llvmorg-$VERSION/clang-$VERSION.src.tar.xz
+tar xf clang-$VERSION.src.tar.xz
+cd clang-$VERSION.src
+
+mkdir build
+cmake -G Ninja -B build \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DLLVM_ENABLE_PROJECTS=clang \
+    -DLLVM_ENABLE_ASSERTIONS=NO \
+    -DLLVM_ENABLE_TERMINFO=OFF \
+    -DLLVM_ENABLE_THREADS=NO \
+    -DLLVM_ENABLE_ZLIB=OFF \
+    -DLLVM_ENABLE_Z3_SOLVER=NO
+
+ninja -C build
+
+mkdir -p $HOME/.local/bin
+cp build/bin/clang-format $HOME/.local/bin

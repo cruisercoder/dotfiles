@@ -1,6 +1,6 @@
 # dotfiles
 
-Just starting to set this up
+WIP
 
 # NOTES
 
