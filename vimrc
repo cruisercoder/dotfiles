@@ -21,6 +21,7 @@ Plug 'https://gn.googlesource.com/gn', { 'rtp': 'misc/vim' }
 Plug 'godlygeek/tabular'
 Plug 'preservim/vim-markdown'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'ghifarit53/tokyonight-vim'
 call plug#end()
 
 nnoremap <Space> :update<bar>:MRU<cr>
@@ -42,3 +43,13 @@ if filereadable($MYLOCALVIMRC)
 endif
 
 let $FZF_DEFAULT_COMMAND='rg --files --hidden'
+
+set termguicolors
+
+let g:tokyonight_style = 'night' " available: night, storm
+let g:tokyonight_enable_italic = 1
+"let g:tokyonight_enable_italic = 0
+
+colorscheme tokyonight
+
+
