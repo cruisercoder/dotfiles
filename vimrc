@@ -3,11 +3,27 @@ syntax on
 set expandtab
 set tabstop=2
 
+" quick buffer movement (TODO: move to hljk)
 map <C-P> :bp<cr>
 map <C-N> :bn<cr>
 
+" quick window/split movement
 map <C-J> <C-W>j
 map <C-K> <C-W>k
+
+" move block up/down
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
+
+set ignorecase
+set smartcase
+
+
+"set number
+"set relativenumber
+
+"autocmd BufEnter * silent! normal! g`"
+"set nostartofline
 
 call plug#begin()
 Plug 'vim-scripts/a.vim'
@@ -22,12 +38,16 @@ Plug 'godlygeek/tabular'
 Plug 'preservim/vim-markdown'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'ghifarit53/tokyonight-vim'
+
 call plug#end()
 
 nnoremap <Space> :update<bar>:MRU<cr>
 
+"nnoremap <C-Space> i
+"inoremap <C-Space> :update<bar>:FZF<cr>
+
 nnoremap ,f :FormatCode<cr>
-nnoremap ,t :FZF<cr>
+nnoremap ,s :FZF<cr>
 
 " turn off annoying bells when sound is not muted
 set belloff=all
