@@ -4,9 +4,11 @@
 "nnoremap ,b :set makeprg=g++\ %<.cc\ -o\ %< <cr>:make<cr>:cwindow<cr>
 "nnoremap ,r :execute ':!./%<'<cr>
 
-"ninja bindings WIP
-let ninja_out_dir=$MODE
-let ninja_build_target = ''
-let &makeprg='ninja -C out/'.ninja_out_dir.' '.ninja_build_target
+let ninja_out_dir=$OUT
+let ninja_build_target=''
+let &makeprg='ninja -C '.ninja_out_dir.' '.ninja_build_target
+"echo 'OUT: '.ninja_out_dir
+"echo 'MAKEPRG: '.&makeprg
 nnoremap ,b :make<cr>:cwindow<cr>
+
 
