@@ -1,0 +1,6 @@
+# general ctag settings
+# put local ctags in something like  ~/.ctags/local.ctags
+--verbose=no
+--recurse=yes
+--languages=c,c++
+

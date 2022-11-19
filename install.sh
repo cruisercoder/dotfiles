@@ -13,6 +13,7 @@ DOTFILES=(
   "vim/ftplugin/python.vim"
   "vim/ftplugin/java.vim"
   "zshrc"
+  "ctags.d/config.ctags"
 )
 
 mkdir -p $HOME/.vim/ftplugin
