@@ -1,6 +1,6 @@
 #!/bin/bash -ex
 
-VERSION=3.9.15
+VERSION=3.14.0
 
 unamestr=`uname`
 
@@ -14,7 +14,9 @@ if [[ "$unamestr" == 'Darwin' ]]; then
 # for mac with brew installed 
 ./configure \
   --prefix=$HOME/.local \
-  --with-openssl=$(brew --prefix openssl)
+  --with-openssl=$(brew --prefix openssl) \
+  --enable-shared
+
 elif [[ "$unamestr" == 'Linux' ]]; then
 ./configure \
   --prefix=$HOME/.local 
